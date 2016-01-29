@@ -3,7 +3,7 @@ $AuthList = "Administrator", "Trevor", "Test" #GC "C:\temp\authlist"
 $Configuration = ""
 
 # If cmdlet exists, do work
-If (Get-Command -Name Get-LocalGroupMember -Eq $True)
+If (Get-Command -Name Get-LocalGroupMember -Eq $True -ErrorAction SilentlyContinue)
      {
          $Configuration = Get-LocalGroupMember -ComputerName $Server Administrators
      } Else {
